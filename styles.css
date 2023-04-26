@@ -1,0 +1,18 @@
+.wrapper{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F3F5FC;
+}
+
+.encriptador{
+  display: flex;
+  flex-direction: column;
+}
+
+.respuesta-container{
+  display: flex;
+  flex-direction: column;
+}
