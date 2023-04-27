@@ -6,24 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Encriptador</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="normalize.css">
 </head>
 <body>
   <div class="wrapper">
-    <div class="encriptador">
-      <div class="encriptador-input">
-        <input type="text" name="palabra" id="input__palabra">
+    <div class="logo-container">
+      <img src="/Logo.svg" alt="">
+    </div>
+    <div class="container">
+      <div class="encriptador">
+        <div class="encriptador-input">
+          <textarea placeholder="Ingrese el texto aqui" rows="8" type="text" name="palabra" id="input__palabra"></textarea>
+        </div>
+        <div class="encriptador-abajo">
+          <div class="encriptador-abajo_alert">
+            <img src="/alert.svg" alt="">
+            <p>Solo letras minúsculas y sin acentos</p>
+          </div>
+          <div class="encriptador-abajo_botones containerC">
+              <button class="boton btnE" id="btn__encriptar">Encriptar</button>
+              <button class="boton" id="btn__desEncriptar">Desencriptar</button>
+          </div>
+        </div>
       </div>
-      <div class="encriptador-botones">
-        <button id="btn__encriptar">Encriptar</button>
-        <button id="btn__desEncriptar">Des Encriptar</button>
+      <div class="respuesta">
+        <div class="respuesta-container">
+          <div class="respuesta-container_content">
+            <div class="respuesta-container_content-img">
+              <img loading="lazy" src="/Muñeco.png" alt="muñeco">
+            </div>
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p id="p__respuesta">Ingresa el texto que desees encriptar o desencriptar.</p>
+          </div>
+          <div class="respuesta-container_boton">
+            <button class="boton" id="btn__copiar">Copiar Texto</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="respuesta-container">
-      <p id="p__respuesta">Aun no hay texto</p>
-      <button id="btn__copiar">Copiar Texto</button>
-    </div>
-    <script src="/index.js"></script>
   </div>
+  <script src="/index.js"></script>
 </body>
 </html>
