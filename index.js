@@ -3,6 +3,7 @@ const btnCopiar = document.getElementById('btn__copiar')
 const btnDesEncriptar = document.getElementById('btn__desEncriptar')
 const inputPalabra = document.getElementById('input__palabra')
 const pRespuesta = document.getElementById('p__respuesta')
+const divRespuesta = document.getElementById('respuesta')
 const vocales = {
   e: 'enter',
   i: 'imes',
@@ -11,21 +12,41 @@ const vocales = {
   u: 'ufat',
 }
 
-btnCopiar.addEventListener('click', () => {
-  if (pRespuesta.textContent) {
-    const textoACopiar = pRespuesta.textContent
-    navigator.clipboard
-      .writeText(textoACopiar)
-      .then(() => (btnCopiar.textContent = 'Copiado!'))
-      .catch((e) => console.log(e))
-  }
-})
+function crearBotonCopiar() {
+  const divBoton = document.createElement('div')
+  divBoton.classList.add('respuesta-container_boton')
+  const botonCopiar = document.createElement('button')
+  botonCopiar.classList.add('boton')
+  botonCopiar.setAttribute('id', 'btn__copiar')
+  botonCopiar.textContent = 'Copiar Texto'
+
+  divBoton.appendChild(botonCopiar)
+  divRespuesta.appendChild(divBoton)
+}
+
+
 
 btnEncriptar.addEventListener('click', () => {
   if (inputPalabra.value) {
     const palabraEncriptada = encriptar(inputPalabra.value)
     pRespuesta.textContent = palabraEncriptada
-    btnCopiar.textContent = 'Copiar Texto'
+    if (btnCopiar) {
+      btnCopiar.textContent = 'Copiar Texto'
+    }
+    divRespuesta.remove()
+    crearBotonCopiar()
+    setTimeout(() => {
+      const btnCopiar = document.getElementById('btn__copiar')
+      btnCopiar.addEventListener('click', () => {
+        if (pRespuesta.textContent) {
+          const textoACopiar = pRespuesta.textContent
+          navigator.clipboard
+            .writeText(textoACopiar)
+            .then(() => (btnCopiar.textContent = 'Copiado!'))
+            .catch((e) => console.log(e))
+        }
+      })
+    }, 100)
   } else {
     pRespuesta.textContent = 'por favor ingrese un texto'
   }
