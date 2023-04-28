@@ -20,6 +20,7 @@ function crearRespuesta(respuesta) {
   pRespuesta2.classList.add('textoRespuesta2')
   divRespuesta.classList.remove('respuesta-container')
   botonCopiar.classList.add('boton')
+  botonCopiar.classList.add('btnC')
   divBoton.classList.add('respuesta-container_boton')
   divRespuesta.classList.add('respuesta-container2')
   pRespuesta2Div.classList.add('respuesta-container2_texto')

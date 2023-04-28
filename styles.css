@@ -1,5 +1,6 @@
 body {
   font-family: Inter;
+  background: #F3F5FC;
 }
 
 .wrapper{
@@ -14,7 +15,7 @@ body {
 }
 
 .logo-container{
-  position: fixed;
+  position: absolute;
   top: 50px;
   left: 20px;
   z-index: 9999;
@@ -36,6 +37,24 @@ body {
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .wrapper{
+    min-height: 100VH;
+    height: 100%;
+  }
+
+  .container{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .logo-container{
+    top: 10px;
+    left: -20px;
+  }
+}
+
 .boton{
   border: 1px #0A3871 solid;
   color: #0A3871;
@@ -54,6 +73,10 @@ body {
 .btnE{
   color: #FFF;
   background-color: #0A3871;
+}
+
+.btnC{
+  background: none;
 }
 
 /* Encriptador */
@@ -78,6 +101,7 @@ body {
 }
 
 .encriptador-input textarea{
+  font-family: inter;
   text-transform: lowercase;
   font-style: normal;
   font-weight: 400;
@@ -115,6 +139,24 @@ textarea:focus-visible{
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .encriptador{
+    width: 90%;
+    padding-left: 0;
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .encriptador-input textarea{
+    max-height: 160px;
+  }
+
+  .encriptador-abajo_botones{
+    flex-direction: column;
+  }
 }
 
 /* Respuesta */
@@ -219,4 +261,16 @@ textarea:focus-visible{
 
 .respuesta-container_boton button{
   padding: 5% 10%;
+}
+
+@media screen and (max-width: 768px) {
+  .respuesta{
+    margin-top: 7%;
+    height: 30%;
+    width: 90%;
+  }
+
+  .respuesta-container_content-img{
+    display: none;
+  }
 }
