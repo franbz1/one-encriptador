@@ -150,6 +150,10 @@ textarea:focus-visible{
 }
 
 @media screen and (max-width: 430px) {
+  .encriptador-input{
+    padding-top: 50px;
+  }
+
   .encriptador-input textarea{
     max-height: 160px;
   }
